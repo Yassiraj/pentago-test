@@ -1,0 +1,64 @@
+<form [formGroup]="form" class="mb-1" (submit)="saveUser()" #formDirective="ngForm" style="width: 400px;">
+   
+    <h3 class="tui-form__header tui-form__header_margin-top_none">
+      REGISTRATION
+    </h3>
+
+    <!-- First Name -->
+    <div class="tui-form__row mb-1"> 
+        <tui-input 
+            formControlName="firstName" 
+            tuiHintContent="Enter your name">
+            First name
+        </tui-input>
+        <tui-error formControlName="firstName" [error]="[] | tuiFieldError | async"></tui-error>
+    </div>
+
+    <!-- Lastname -->
+    <div class="tui-form__row mb-1">
+        <tui-input
+            formControlName="lastName"
+            tuiHintContent="Enter your lastName">
+            Last name
+        </tui-input>
+        <tui-error formControlName="lastName" [error]="[] | tuiFieldError | async"></tui-error>
+      </div>
+
+    <!-- DateBirth -->
+    <div class="tui-form__row mb-1">
+        <tui-input-date formControlName="dateBirth">
+            Date of birth
+        </tui-input-date>
+        <tui-error formControlName="dateBirth" [error]="[] | tuiFieldError | async"></tui-error>
+    </div>
+
+    <!-- Email -->
+   <div class="tui-form__row mb-1">
+        <tui-input formControlName="email">
+            Email
+        </tui-input>
+        <tui-error formControlName="email" [error]="[] | tuiFieldError | async"></tui-error>
+    </div>
+
+    <!-- Phone -->
+    <div class="tui-form__row mb-1">
+        <tui-input-phone class="input"
+            formControlName="phone"
+            tuiTextfieldAutocomplete="off"
+            [countryCode]="'+212'">
+            Telephone number
+        </tui-input-phone>
+        <tui-error formControlName="phone" [error]="[] | tuiFieldError | async"></tui-error>
+    </div>
+
+    <div class="tui-form__buttons">
+      <button tuiButton size="l" type="submit" [loading]="savingLoaders$|async">
+        Submit
+      </button>
+      <button tuiButton type="button"  class="tui-form__button" appearance="flat" size="l"
+        (click)="formDirective.resetForm()">
+        Cancel
+      </button>
+    </div>
+
+</form>

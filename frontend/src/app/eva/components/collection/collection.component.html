@@ -1,0 +1,50 @@
+<h1>
+    Pentalog Evaluation 👍
+</h1>
+<div class="container">
+    <tui-block-status
+        class="card"
+        [card]="true"
+    >
+       <app-new-form></app-new-form> 
+    </tui-block-status>
+    <tui-block-status
+        class="card"
+        [card]="true"
+    >
+        <tui-loader
+            [overlay]="true"
+            [showLoader]="!!(collectionLoaders$|async)"
+        >
+            <table>
+                <thead>
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Date of birth</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of collection$|async; track $index) {
+                        <tr>
+                            <td>{{item.firstName}}</td>
+                            <td>{{item.lastName}}</td>
+                            <td>{{item.dateBirth}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.phone}}</td>
+                        </tr>
+                    }
+                    @empty {
+                        <tr>
+                            <td>
+                                <p class="text-center">Please add new items!</p>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </tui-loader>
+    </tui-block-status>
+</div>

@@ -1,0 +1,46 @@
+:host{
+  padding: 2em;
+  display: block;
+}
+.container {
+  display: flex;
+  gap: 1rem;
+  .card {
+    background-color: var(--tui-background-base-alt);
+    block-size: auto;
+  }
+}
+
+
+table{ 
+  border-spacing: 1; 
+  border-collapse: collapse; 
+  background:white;
+  border-radius:6px;
+  overflow:hidden;
+  max-width:800px; 
+  width:100%;
+  margin:0 auto;
+  position:relative;
+  *{
+    position:relative
+  }
+  td,th{
+    padding-left:15px;
+    padding-right:15px
+  }
+  thead tr{ 
+    height:60px;
+    background:#FFED86;
+    font-size:16px;
+  }
+  tbody tr{
+    height:48px; border-bottom:1px solid #E3F1D5 ;
+    &:last-child  { border:0; }
+  }
+ 	td,th 					{ text-align:left;
+		&.l 					{ text-align:right }
+		&.c 					{ text-align:center }
+		&.r 					{ text-align:center }
+	}
+}

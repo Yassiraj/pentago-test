@@ -1,0 +1,34 @@
+.tui-form__header {
+    font: var(--tui-font-heading-5);
+    margin: 32px 0 20px;
+    margin-top: 32px;
+    &_margin-top_none {
+        margin-top: 0;
+    }
+}
+.tui-form__row {
+    margin-top: 20px;
+    &_multi-fields {
+        display: flex;
+      }
+}
+.tui-form__multi-field {
+    flex: 1 1 0;
+    min-width: 0;
+    margin-left: 20px;
+    &:first-child {
+        margin-left: 0;
+    }
+}
+.tui-form__buttons {
+    display: flex;
+    margin-top: 32px;
+}
+
+.mb-1 {
+    margin-bottom: 7px;
+}
+
+.text-center{
+    text-align: center;
+}
